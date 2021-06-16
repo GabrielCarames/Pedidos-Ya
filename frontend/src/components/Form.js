@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export default function Form() {
     const [form, setForm] = useState({});
-    
+
     const handleChange = (e) => {
         setForm({
           ...form,
