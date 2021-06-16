@@ -1,0 +1,45 @@
+.Header-container {
+    margin: 13px;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+}
+
+.Header-container .Header-logo {
+    margin: 5px;
+    width: 3.5em;
+}
+
+.Header-logo img{
+    width: 100%;
+    height: auto;
+}
+
+.Header-login-options {
+    display: flex;
+    margin: 0px 0 5px 0px;
+    justify-content: space-between;
+    width: 12.5em;
+}
+
+.Header-login-options *{
+    height: 1.8em;
+    font-size: 14px;
+    line-height: 1.1;
+    margin-top: 2px;
+    color: #fff;
+}
+
+.Header-login-options .Login-options-login button {
+    width: 6em;
+    background-color: #ff441f;
+    border: none;
+    border-radius: 8px;
+}
+
+.Header-login-options .Login-options-register button {
+    width: 8em;
+    background-color: #0cc665;
+    border: none;
+    border-radius: 8px;
+} 

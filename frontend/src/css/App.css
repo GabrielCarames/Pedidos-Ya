@@ -1,0 +1,23 @@
+.Homepage {
+  display: grid;
+  grid-template-areas: 
+  'header header header'
+  'main main main'
+  'footer footer footer';
+  grid-template-rows: 3.5em auto 20%;
+}
+
+.Homepage .Homepage-header {
+  grid-area: header;
+  background-color: #fafafa;
+}
+
+.Homepage .Homepage-main {
+  grid-area: main;
+  background-color: #e9e9e9;
+}
+
+.Homepage .Homepage-footer {
+  grid-area: footer;
+  background-color: rgb(194, 54, 194);
+}

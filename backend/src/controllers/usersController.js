@@ -14,7 +14,7 @@ userController.createUser = async (req,res) => {
     res.json({message: 'Usuario creado'})
 }
 
-userController.getUser = (req,res) => res.json({message: []})
+userController.getUser = (req,res) => res.json({message: 'fua me invocaste xdddddddddddddddddddddddddddddddd'})
 
 userController.updateUser = (req,res) => res.json({message: []})
 

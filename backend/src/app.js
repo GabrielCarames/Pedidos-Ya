@@ -15,5 +15,4 @@ app.use(express.json()) // esto hace que el sv pueda entender datos de JSON y ST
 //routes
 app.use('/users', require('./routes/users'))
 
-
 module.exports = app;
