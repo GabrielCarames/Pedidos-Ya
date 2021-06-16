@@ -13,6 +13,8 @@ export default function Form() {
 
      const handleSubmit = async (e) => {
         e.preventDefault();
+        console.log(form)
+        console.log(JSON.stringify(form))
         await axios.post('http://localhost:3000/users/register', form)
         .then(res => {
             console.log("El usuario ha sido registrado correctamente") 
