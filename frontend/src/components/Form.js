@@ -13,10 +13,10 @@ export default function Form() {
 
      const handleSubmit = async (e) => {
         e.preventDefault();
-        await axios.post('http://localhost:3000/users/register', {
-            form: form
+        await axios.post('http://localhost:3000/users/register', form)
+        .then(res => {
+            console.log("El usuario ha sido registrado correctamente") 
         })
-        .then(res => console.log("LO HICISTE"))
         //Axios.post('http://localhost:3001/data/register', form)
         //alert("El formulario se ha enviado");
     };
@@ -27,11 +27,14 @@ export default function Form() {
                 <input className="Name" placeholder="Nombres" type="text" name="names" onChange={handleChange}></input>
                 <input className="Surname" placeholder="Apellidos" type="text" name="surnames" onChange={handleChange}></input>
             </div>
-                <div className="Input-email">
+            <div className="Input-password">
+                <input placeholder="Contraseña" type="password" name="password" onChange={handleChange} ></input>
+            </div>
+            <div className="Input-email">
                 <input placeholder="Email" type="email" name="email" onChange={handleChange} ></input>
             </div>
-                <div className="Input-number">
-                <input placeholder="Número de celular" name="number" onChange={handleChange}></input>
+            <div className="Input-number">
+                <input placeholder="Número de celular" name="age" onChange={handleChange}></input>
             </div>
             <button type="submit" className="Register-button">Registrarme</button>
         </form>

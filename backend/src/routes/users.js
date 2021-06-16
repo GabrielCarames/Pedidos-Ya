@@ -5,13 +5,14 @@ const { getUsers, createUser, getUser, updateUser, deleteUser } = require('../co
 
 router.route('/')
     .get(getUsers)
+
+router.route('/register')
     .post(createUser)
 
-
-router.route('/register').post((req, res) => {
+/*router.route('/register').post((req, res) => {
     const data = req.body
     console.log('TACHANCKAAAAAAAAAAAAAAAAAA', data)
-})
+})*/
 
 module.exports = router
 

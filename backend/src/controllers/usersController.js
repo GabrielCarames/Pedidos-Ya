@@ -8,8 +8,8 @@ userController.getUsers = async (req,res) => {
 }
 
 userController.createUser = async (req,res) => {
-    const { names, surname, password, email, age} = req.body
-    const newUser = new User ({ names, surname, password, email, age})
+    const { names, surnames, password, email, age} = req.body
+    const newUser = new User ({ names, surnames, password, email, age})
     await newUser.save()
     res.json({message: 'Usuario creado'})
 }

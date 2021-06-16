@@ -2,10 +2,10 @@ const { Schema, model } = require('mongoose');
 
 const User = new Schema ({
     names: String,
-    surname: String,
+    surnames: String,
     password: {
       type: String,
-      required: true,
+      required: false,
       trim: true, //el trim lo que hace es eliminar espacios del campo, ej: "   soy moli nete """
       
     },
