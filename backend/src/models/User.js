@@ -1,23 +1,30 @@
-const { Schema, model } = require('mongoose');
-const bcrypt = require('bcrypt-nodejs');
+const { Schema, model } = require("mongoose");
+const bcrypt = require("bcrypt-nodejs");
 
-const User = new Schema ({
-    names: String,
-    surnames: String,
+const User = new Schema(
+  {
+    names: {
+      type: String
+    },
+    surnames: {
+      type: String
+    },
     password: {
       type: String,
       required: false,
       trim: false, //el trim lo que hace es eliminar espacios del campo, ej: "   soy moli nete """
-      
     },
-    email: { 
-      type: String
+    email: {
+      type: String,
     },
-    age: Number
-}, {
-    typeKey: '$type' ,
-    timestamps: true
-})
+    celnumber: {
+      type: Number
+    }
+  },
+  {
+    timestamps: true,
+  }
+);
 
 User.methods.encryptPassword = (password) => {
   return bcrypt.hashSync(password, bcrypt.genSaltSync(10));
@@ -25,8 +32,8 @@ User.methods.encryptPassword = (password) => {
   //cuanto mayor sea, mejor en teoria, mas dificil de desencriptar
 };
 
-User.methods.comparePassword= function (password) {
+User.methods.comparePassword = function (password) {
   return bcrypt.compareSync(password, this.password); //compara las contraseñas de la bd y la que recibe
 };
 
-module.exports = model('User', User)
+module.exports = model("User", User);

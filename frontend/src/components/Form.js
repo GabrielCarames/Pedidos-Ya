@@ -13,7 +13,7 @@ export default function Form() {
 
      const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(form)
+        console.log("este es el form", form)
         console.log(JSON.stringify(form))
         await axios.post('http://localhost:3000/users/register', form)
         .then(res => {
@@ -36,7 +36,7 @@ export default function Form() {
                 <input placeholder="Email" type="email" name="email" onChange={handleChange} ></input>
             </div>
             <div className="Input-number">
-                <input placeholder="Número de celular" name="age" onChange={handleChange}></input>
+                <input placeholder="Número de celular" name="celnumber" onChange={handleChange}></input>
             </div>
             <button type="submit" className="Register-button">Registrarme</button>
         </form>

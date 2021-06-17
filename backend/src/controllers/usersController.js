@@ -15,11 +15,12 @@ userController.findById = async (id) => {
     return User.findOne({ 'id': id })
 }
 
-userController.createUser = async (req,res) => {
-    const { names, surnames, password, email, age} = req.body
-    const newUser = new User ({ names, surnames, password, email, age})
+userController.createUser = async (values) => {
+    const { names, surnames, password, email, celnumber} = values
+    const newUser = new User ({ names, surnames, password, email, celnumber })
+    newUser.password = newUser.encryptPassword(password);
     await newUser.save()
-    res.json({message: 'Usuario creado'})
+    return newUser
 }
 
 userController.getUser = (req,res) => res.json({message: 'fua me invocaste xdddddddddddddddddddddddddddddddd'})
