@@ -18,10 +18,12 @@ export default class Header extends Component {
                 </div>
                 <div className="Header-login-options">
                     <div className="Login-options-login">
-                        <button className="Buttons-login"><h3>Ingresar</h3></button>
+                        <button className="Button-login">
+                        <Link className="Buttons-login" to="/login"><h3>Ingresar</h3></Link>
+                        </button>
                     </div>
                     <div className="Login-options-register">
-                        <button className="Buttons-register">
+                        <button className="Button-register">
                             <Link className="navbar-item" to="/register"><h3>Registrarse</h3></Link>
                         </button>
                     </div>

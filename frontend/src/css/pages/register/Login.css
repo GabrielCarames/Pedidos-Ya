@@ -1,0 +1,33 @@
+.Login-container {
+    padding-top: 6em;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 4em;
+    text-align: center;
+    background-color: #e9e9e9;
+    font-size: 10px;
+}
+
+.Login-container .Login-options {
+    justify-self:center;
+    width: 75%;
+}
+
+.Login-options h1 {
+    font-size: 22px;
+}
+
+.Login-options h3 {
+    font-size: 10px;
+}
+
+.login-form .Input-celnumber {
+    margin-top: 1em;
+}
+
+.Input-celnumber input {
+    outline: none;
+    border: none;
+    
+}
