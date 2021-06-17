@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import {FormHelper} from '../components/FormHelper';
 import '../css/pages/register/Login.css'
 
-export default class Login extends Component {
+export default class Login extends Component {  
   render () {
     return (
       <div className="Login-container">
@@ -13,9 +14,9 @@ export default class Login extends Component {
             <button className="Google-button"><i className="fab fa-google"></i>&nbsp;&nbsp;&nbsp;&nbsp;Google</button>
             <button className="Instagram-button"><i className="fab fa-instagram"></i>&nbsp;&nbsp;&nbsp;&nbsp;Instagram</button>
           </div>
-          <form className="login-form">
+          <form className="login-form" onSubmit={FormHelper().handleSubmit}>
             <div className="Input-celnumber">
-                <input className="Celnumber" placeholder="Escribe tu número" type="text" name="celnumber"></input>
+                <input className="Celnumber" placeholder="Escribe tu número" type="text" name="celnumber" onChange={FormHelper().handleChange}></input>
             </div>
             <button type="submit" className="Login-button">Iniciar sesión</button>
           </form>

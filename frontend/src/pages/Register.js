@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
+import {FormHelper} from '../components/FormHelper';
 import '../css/pages/register/Register.css'
-import Form from '../components/Form';
-
 
 export default class Register extends Component {
 
@@ -20,7 +19,22 @@ export default class Register extends Component {
         </div>
         <div className="Register-inside">
           <h2>También puedes registrarte con teléfono</h2>
-          <Form />
+          <form className="Register-form" onSubmit={FormHelper().handleSubmit}>
+            <div className="Input-names">
+                <input className="Name" placeholder="Nombres" type="text" name="names" onChange={FormHelper().handleChange}></input>
+                <input className="Surname" placeholder="Apellidos" type="text" name="surnames" onChange={FormHelper().handleChange}></input>
+            </div>
+            <div className="Input-password">
+                <input placeholder="Contraseña" type="password" name="password" onChange={FormHelper().handleChange}></input>
+            </div>
+            <div className="Input-email">
+                <input placeholder="Email" type="email" name="email" onChange={FormHelper().handleChange}></input>
+            </div>
+            <div className="Input-number">
+                <input placeholder="Número de celular" name="celnumber" onChange={FormHelper().handleChange}></input>
+            </div>
+            <button type="submit" className="Register-button">Registrarme</button>
+        </form>
         </div>
       </div>
     );
