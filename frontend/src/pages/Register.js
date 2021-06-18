@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import {FormHelper} from '../components/FormHelper';
+
+import useFormHelper from '../hooks/useFormHelper';
 import '../css/pages/register/Register.css'
 
-export default class Register extends Component {
+const Register = () => {
+  const [handleChange, handleSubmit] = useFormHelper()
 
 
-  render () {
     return (
       <div className="Register-container">
         <div className="Register-outside">
@@ -19,24 +19,25 @@ export default class Register extends Component {
         </div>
         <div className="Register-inside">
           <h2>También puedes registrarte con teléfono</h2>
-          <form className="Register-form" onSubmit={FormHelper().handleSubmit}>
+          <form className="Register-form" onSubmit={handleSubmit}>
             <div className="Input-names">
-                <input className="Name" placeholder="Nombres" type="text" name="names" onChange={FormHelper().handleChange}></input>
-                <input className="Surname" placeholder="Apellidos" type="text" name="surnames" onChange={FormHelper().handleChange}></input>
+                <input className="Name" placeholder="Nombres" type="text" name="names" onChange={handleChange}></input>
+                <input className="Surname" placeholder="Apellidos" type="text" name="surnames" onChange={handleChange} ></input>
             </div>
             <div className="Input-password">
-                <input placeholder="Contraseña" type="password" name="password" onChange={FormHelper().handleChange}></input>
+                <input placeholder="Contraseña" type="password" name="password" onChange={handleChange}></input>
             </div>
             <div className="Input-email">
-                <input placeholder="Email" type="email" name="email" onChange={FormHelper().handleChange}></input>
+                <input placeholder="Email" type="email" name="email" onChange={handleChange}></input>
             </div>
             <div className="Input-number">
-                <input placeholder="Número de celular" name="celnumber" onChange={FormHelper().handleChange}></input>
+                <input placeholder="Número de celular" name="celnumber" onChange={handleChange}></input>
             </div>
             <button type="submit" className="Register-button">Registrarme</button>
         </form>
         </div>
       </div>
     );
-  }
 }
+
+export default Register;

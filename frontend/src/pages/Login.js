@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
-import {FormHelper} from '../components/FormHelper';
+
+import useFormHelper from '../hooks/useFormHelper';
 import '../css/pages/register/Login.css'
 
-export default class Login extends Component {  
-  render () {
+const Login = () => {  
+    const [handleChange, handleSubmit] = useFormHelper()
+
     return (
       <div className="Login-container">
         <div className="Login-options">
@@ -14,9 +15,9 @@ export default class Login extends Component {
             <button className="Google-button"><i className="fab fa-google"></i>&nbsp;&nbsp;&nbsp;&nbsp;Google</button>
             <button className="Instagram-button"><i className="fab fa-instagram"></i>&nbsp;&nbsp;&nbsp;&nbsp;Instagram</button>
           </div>
-          <form className="login-form" onSubmit={FormHelper().handleSubmit}>
+          <form className="login-form" onSubmit={handleSubmit}>
             <div className="Input-celnumber">
-                <input className="Celnumber" placeholder="Escribe tu número" type="text" name="celnumber" onChange={FormHelper().handleChange}></input>
+                <input className="Celnumber" placeholder="Escribe tu número" type="text" name="celnumber" onChange={handleChange}></input>
             </div>
             <button type="submit" className="Login-button">Iniciar sesión</button>
           </form>
@@ -26,5 +27,6 @@ export default class Login extends Component {
         </div>
       </div>
     );
-  }
 }
+
+export default Login
