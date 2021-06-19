@@ -3,8 +3,8 @@ const router = Router()
 const passport = require('passport')
 const { getUsers, createUser, getUser, updateUser, deleteUser } = require('../controllers/usersController')
 
-router.route('/')
-    .get(getUsers)
+/*router.route('/')
+    .get(getUsers)*/
 
 router.post('/register', passport.authenticate('register',
   {

@@ -13,7 +13,25 @@ const useFormHelper = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await axios.post('http://localhost:3000/users/register', form)
+        try {
+            if(isNaN(form.celnumber)){
+                console.log(form.celnumber)
+                throw new Error("No puedes ingresar caracteres en el número celular.")
+            }
+            
+            try {
+                e.preventDefault();
+                await axios.post('http://localhost:3000/users/register', form)
+            } catch (error) {
+                e.preventDefault();
+                console.log("Hubo un error con el servidor", error)
+            }
+        } catch (error) {
+            e.preventDefault();
+            console.log("Ha ocurrido un error: ", error)
+        }
+            
+        
     };
 
     return[

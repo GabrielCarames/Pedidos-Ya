@@ -21,17 +21,17 @@ const Register = () => {
           <h2>También puedes registrarte con teléfono</h2>
           <form className="Register-form" onSubmit={handleSubmit}>
             <div className="Input-names">
-                <input className="Name" placeholder="Nombres" type="text" name="names" onChange={handleChange}></input>
-                <input className="Surname" placeholder="Apellidos" type="text" name="surnames" onChange={handleChange} ></input>
+                <input className="Name" placeholder="Nombres" type="text" name="names" onChange={handleChange} required></input>
+                <input className="Surname" placeholder="Apellidos" type="text" name="surnames" onChange={handleChange} required></input>
             </div>
             <div className="Input-password">
-                <input placeholder="Contraseña" type="password" name="password" onChange={handleChange}></input>
+                <input placeholder="Contraseña" type="password" name="password" onChange={handleChange} required></input>
             </div>
             <div className="Input-email">
-                <input placeholder="Email" type="email" name="email" onChange={handleChange}></input>
+                <input placeholder="Email" type="email" name="email" onChange={handleChange} required></input>
             </div>
             <div className="Input-number">
-                <input placeholder="Número de celular" name="celnumber" onChange={handleChange}></input>
+                <input placeholder="Número de celular" name="celnumber" onChange={handleChange} required></input>
             </div>
             <button type="submit" className="Register-button">Registrarme</button>
         </form>
