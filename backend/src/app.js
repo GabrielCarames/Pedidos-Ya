@@ -2,7 +2,6 @@ const cors = require('cors')
 const express = require('express');
 const session = require('express-session')
 const passport = require('passport');
-const flash = require('connect-flash');
 const app = express();
 require('../passport/localAuthenticator');
 
@@ -23,20 +22,11 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }))  
-app.use(flash())
 app.use(passport.initialize())
 app.use(passport.session())
 
-app.use((req, res, next) => {
-    //app.locals son las variables globales
-    app.locals.singupMessages = req.flash('singupMessage')
-    app.locals.singinMessages = req.flash('singupMessage')
-    //el next sirve para que continue chapoteando hacia abajo
-    //sino se quedaria recargando infinitamente
-    next()
-})
-
 //routes
 app.use('/users', require('./routes/users'))
+app.use('/localFlashMessages', require('./routes/localFlashMessages'))
 
 module.exports = app;

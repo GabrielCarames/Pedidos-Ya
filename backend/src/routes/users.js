@@ -6,6 +6,8 @@ const { getUsers, createUser, getUser, updateUser, deleteUser } = require('../co
 /*router.route('/')
     .get(getUsers)*/
 
+
+
 router.post('/register', passport.authenticate('register',
   {
     //error con el cors de mierda
@@ -13,8 +15,8 @@ router.post('/register', passport.authenticate('register',
     //mandar de alguna manera el flash message
     //intalar tambien el react global esa meirda de antes de flash
     //y fiajrte que para devolver el flash si puedo hacer algo con el res desde el formhelper al mometno de hacer el axios.post a este register
-    successRedirect: 'http://localhost:3001', //si bien el succes este no hace nada realmente, es necesario para que ande todo
-    failureRedirect: '/user/register',
+    successRedirect: 'http://localhost:3001', //si bien el success este no hace nada realmente, es necesario para que ande todo
+    failureRedirect: '/users/register',
     failureFlash: true,
     passReqToCallback: true
   }

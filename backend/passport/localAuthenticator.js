@@ -2,7 +2,9 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const userController = require('../src/controllers/usersController')
 const User = require('../src/models/User')
-const flash = require('connect-flash')
+
+var LocalStorage = require('node-localstorage').LocalStorage;
+localStorage = new LocalStorage('./scratch');
 
 passport.serializeUser((user, done) => {
   done(null, user.id);
@@ -25,12 +27,12 @@ passport.use('register', new LocalStrategy({
 }, async (req, email, password, done) => {
   const user = await userController.findByEmail(email)
   if(user) {//null es que no le das ningun error, false es que no le das ningun user
-    return done(null, false
-      //req.flash('signupMessage', 'El email ya está siendo utilizado')
+    return done(null, false, localStorage.setItem('failureMessage', 'You have logged in')
       );
   } else {
     const newUser = await userController.createUser(req.body)
-    done(null, newUser, req.flash('signupMessage', 'Usuario creado satisfactoriamente'));
+    localStorage.setItem('successMessage', 'You have logged in');
+    done(null, newUser);
   }
 }));
 

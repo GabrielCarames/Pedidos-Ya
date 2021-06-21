@@ -1,4 +1,4 @@
-/*var express = require('express');
+var express = require('express');
 var router = express.Router();
 
 router.route('/register').post((req, res) => {
@@ -6,4 +6,4 @@ router.route('/register').post((req, res) => {
     console.log("chef laco recibi esto", data)
 })
 
-module.exports = router;*/
+module.exports = router;
