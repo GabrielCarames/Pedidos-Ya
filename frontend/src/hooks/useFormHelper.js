@@ -16,12 +16,16 @@ const useFormHelper = () => {
         try {
             if(isNaN(form.celnumber)){
                 console.log(form.celnumber)
-                throw new Error("No puedes ingresar caracteres en el número celular.")
+                throw new Error("No puedes ingresar caracteres en tu número celular.")
             }
             
             try {
                 e.preventDefault();
-                await axios.post('http://localhost:3000/users/register', form)
+                await axios.post('http://localhost:3000/users/register', form
+                    ).then(function (response) {
+                        window.location.href = "http://localhost:3001/";
+                        console.log("sos re puto", response);
+                    });
             } catch (error) {
                 e.preventDefault();
                 console.log("Hubo un error con el servidor", error)
@@ -30,8 +34,6 @@ const useFormHelper = () => {
             e.preventDefault();
             console.log("Ha ocurrido un error: ", error)
         }
-            
-        
     };
 
     return[

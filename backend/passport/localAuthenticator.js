@@ -25,7 +25,9 @@ passport.use('register', new LocalStrategy({
 }, async (req, email, password, done) => {
   const user = await userController.findByEmail(email)
   if(user) {//null es que no le das ningun error, false es que no le das ningun user
-    return done(null, false, req.flash('signupMessage', 'El email ya está siendo utilizado'));
+    return done(null, false
+      //req.flash('signupMessage', 'El email ya está siendo utilizado')
+      );
   } else {
     const newUser = await userController.createUser(req.body)
     done(null, newUser, req.flash('signupMessage', 'Usuario creado satisfactoriamente'));
