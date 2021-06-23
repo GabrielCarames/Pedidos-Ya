@@ -5,11 +5,11 @@ import '../css/pages/register/Register.css'
 const Register = () => {
   const [handleChange, handleSubmit] = useFormHelper()
 
-
     return (
       <div className="Register-container">
         <div className="Register-outside">
           <h1>Registrate</h1>
+         
           <h3>¿Ya tienes una cuenta? <a>Inicia sesión aquí</a></h3>
           <div className="SocialMedia-buttons">
             <button className="Facebook-button"><i className="fab fa-facebook"></i>&nbsp;&nbsp;&nbsp;&nbsp;Facebook</button>

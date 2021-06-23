@@ -24,8 +24,6 @@ const useFormHelper = () => {
                 await axios.post('http://localhost:3000/users/register', form
                     ).then(async function (response) {
                         alert("Registro completado satisfactoriamente.")
-                        const localFlashMessage = await axios.get('http://localhost:3000/localFlashMessages/')
-                        console.log(localFlashMessage)
                         window.location.href = "http://localhost:3001/";
                     });
             } catch (error) {
