@@ -19,7 +19,7 @@ passport.deserializeUser(async (id, done) => {
   // cada vez que el usuario navega por una pagina
 });
 
-passport.use('register', new LocalStrategy({
+passport.use('local-register', new LocalStrategy({
   usernameField: 'email',
   passwordField: 'password',
   passReqToCallback: true //el req se establece y se usa para cuando adewmas del mail/username y contraseña,
@@ -27,26 +27,25 @@ passport.use('register', new LocalStrategy({
 }, async (req, email, password, done) => {
   const user = await userController.findByEmail(email)
   if(user) {//null es que no le das ningun error, false es que no le das ningun user
-    return done(null, false, localStorage.setItem('failureMessage', 'You error sos puto no pudiste')
+    return done(null, false, localStorage.setItem('failureMessage', 'El email ingresado ya se encuentra registrado.')
       );
   } else {
     const newUser = await userController.createUser(req.body)
-    localStorage.setItem('successMessage', 'You have logged in');
+    localStorage.setItem('successMessage', 'Te has registrado satisfactoriamente.');
     done(null, newUser);
   }
 }));
 
 passport.use('local-signin', new LocalStrategy({
-  usernameField: 'email',
-  passwordField: 'password',
+  usernameField: 'names',
+  passwordField: 'celnumber', //PROBA METIENDO UN MAIL TAMBIEN A VER SI ANDA EL LOGIN DE ALGUNA FROMA CAPO
   passReqToCallback: true
-}, async (req, email, password, done) => {
-  const user = await userController.findByEmail(email);
+}, async (req, names, celnumber, done) => {
+  const user = await userController.findByCelNumber(celnumber);
+  console.log("te encontre putito", user)
   if(!user) {
-    return done(null, false, req.flash('signinMessage', 'No User Found'));
+    return done(null, false, localStorage.setItem('failureMessage', 'El número ingresado no existe.'));
   }
-  if(!user.comparePassword(password)) {
-    return done(null, false, req.flash('signinMessage', 'Incorrect Password'));
-  }
+  localStorage.setItem('successMessage', 'Te has logueado satisfactoriamente.')
   return done(null, user);
 }));

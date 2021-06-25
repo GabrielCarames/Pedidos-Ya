@@ -1,9 +1,11 @@
 
 import useFormHelper from '../hooks/useFormHelper';
 import '../css/pages/register/Login.css'
+import { useState } from 'react';
 
-const Login = () => {  
-    const [handleChange, handleSubmit] = useFormHelper()
+const Login = () => { 
+    const [formType, setformType] = useState("login");
+    const [handleChange, handleSubmit] = useFormHelper(formType)
 
     return (
       <div className="Login-container">
@@ -18,6 +20,7 @@ const Login = () => {
           <form className="login-form" onSubmit={handleSubmit}>
             <div className="Input-celnumber">
                 <input className="Celnumber" placeholder="Escribe tu número" type="text" name="celnumber" onChange={handleChange}></input>
+                <input className="Verga" placeholder="Escribe tu verga" type="text" name="names" onChange={handleChange}></input>
             </div>
             <button type="submit" className="Login-button">Iniciar sesión</button>
           </form>

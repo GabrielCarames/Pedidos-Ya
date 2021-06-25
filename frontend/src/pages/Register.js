@@ -1,9 +1,11 @@
 
 import useFormHelper from '../hooks/useFormHelper';
 import '../css/pages/register/Register.css'
+import { useState } from 'react';
 
 const Register = () => {
-  const [handleChange, handleSubmit] = useFormHelper()
+    const [formType, setformType] = useState("register");
+    const [handleChange, handleSubmit] = useFormHelper(formType)
 
     return (
       <div className="Register-container">

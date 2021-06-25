@@ -11,6 +11,10 @@ userController.findByEmail = async (email) => {
     return User.findOne({ 'email': email })
 }
 
+userController.findByCelNumber = async (celnumber) => {
+    return User.findOne({ 'celnumber': celnumber })
+}
+
 userController.findById = async (id) => {
     return User.findOne({ 'id': id })
 }
