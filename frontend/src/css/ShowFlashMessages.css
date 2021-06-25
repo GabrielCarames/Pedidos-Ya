@@ -1,0 +1,14 @@
+.Flash-Message {
+    display: flex;
+
+    justify-content: center;
+    background-color: #ff441f;
+    color: white;
+    text-align: center;
+    position: sticky;
+}
+
+.Flash-Message .Message-closeIcon {
+    position: absolute;
+    padding-left: 95%;
+}

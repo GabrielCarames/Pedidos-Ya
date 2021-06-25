@@ -23,6 +23,7 @@ const useFormHelper = () => {
                 e.preventDefault();
                 await axios.post('http://localhost:3000/users/register', form
                     ).then(async function (response) {
+                        console.log("antes de todo", response)
                         alert("Registro completado satisfactoriamente.")
                         window.location.href = "http://localhost:3001/";
                     });

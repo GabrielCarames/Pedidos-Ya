@@ -27,7 +27,7 @@ passport.use('register', new LocalStrategy({
 }, async (req, email, password, done) => {
   const user = await userController.findByEmail(email)
   if(user) {//null es que no le das ningun error, false es que no le das ningun user
-    return done(null, false, localStorage.setItem('failureMessage', 'You have logged in')
+    return done(null, false, localStorage.setItem('failureMessage', 'You error sos puto no pudiste')
       );
   } else {
     const newUser = await userController.createUser(req.body)
