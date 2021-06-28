@@ -37,12 +37,11 @@ passport.use('local-register', new LocalStrategy({
 }));
 
 passport.use('local-signin', new LocalStrategy({
-  usernameField: 'names',
-  passwordField: 'celnumber', //PROBA METIENDO UN MAIL TAMBIEN A VER SI ANDA EL LOGIN DE ALGUNA FROMA CAPO
+  usernameField: 'celnumber',
+  passwordField: 'celnumber',
   passReqToCallback: true
 }, async (req, names, celnumber, done) => {
   const user = await userController.findByCelNumber(celnumber);
-  console.log("te encontre putito", user)
   if(!user) {
     return done(null, false, localStorage.setItem('failureMessage', 'El número ingresado no existe.'));
   }

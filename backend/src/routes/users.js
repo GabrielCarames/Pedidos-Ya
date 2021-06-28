@@ -1,16 +1,7 @@
 const { Router } = require("express");
 const router = Router();
 const passport = require("passport");
-const {
-  getUsers,
-  createUser,
-  getUser,
-  updateUser,
-  deleteUser,
-} = require("../controllers/usersController");
-
-/*router.route('/')
-    .get(getUsers)*/
+const userController = require("../controllers/usersController");
 
 router.post("/register", passport.authenticate("local-register", 
   {
@@ -26,14 +17,10 @@ router.post("/login", passport.authenticate("local-signin",
     failureRedirect: "/users/login",
     passReqToCallback: true
   }
-));
-
-/*router.route('/register')
-    .post(createUser)*/
-
-/*router.route('/register').post((req, res) => {
-    const data = req.body
-    console.log('TACHANCKAAAAAAAAAAAAAAAAAA', data)
-})*/
+), (req, res) => {
+  // If you use "Content-Type": "application/json"
+  // req.isAuthenticated is true if authentication was success else it is false
+  res.json({auth: req.isAuthenticated()});
+});
 
 module.exports = router;

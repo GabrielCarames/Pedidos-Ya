@@ -20,7 +20,6 @@ const Login = () => {
           <form className="login-form" onSubmit={handleSubmit}>
             <div className="Input-celnumber">
                 <input className="Celnumber" placeholder="Escribe tu número" type="text" name="celnumber" onChange={handleChange}></input>
-                <input className="Verga" placeholder="Escribe tu verga" type="text" name="names" onChange={handleChange}></input>
             </div>
             <button type="submit" className="Login-button">Iniciar sesión</button>
           </form>
