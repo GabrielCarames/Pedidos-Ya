@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
 
 const Header = () => {
-
+    const userLogged = localStorage.getItem('userLogged')
+    console.log("este esos", userLogged)
     return(
         <div className="Header-container">
             <div className="Header-logo">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Rappi_logo.svg/1200px-Rappi_logo.svg.png" alt="logo"></img>
             </div>
+                    {/*userLogged ? <div>{userLogged}</div> : <div>acataensealusercapo</div>*/}
             <div className="Header-login-options">
                 <div className="Login-options-login">
                     <button className="Button-login">

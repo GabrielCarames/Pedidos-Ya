@@ -4,7 +4,7 @@ import '../css/pages/register/Register.css'
 import { useState } from 'react';
 
 const Register = () => {
-    const [formType, setformType] = useState("register");
+    const [formType] = useState("register");
     const [handleChange, handleSubmit] = useFormHelper(formType)
 
     return (
@@ -12,7 +12,7 @@ const Register = () => {
         <div className="Register-outside">
           <h1>Registrate</h1>
          
-          <h3>¿Ya tienes una cuenta? <a>Inicia sesión aquí</a></h3>
+          <h3>¿Ya tienes una cuenta? <a href="/#">Inicia sesión aquí</a></h3>
           <div className="SocialMedia-buttons">
             <button className="Facebook-button"><i className="fab fa-facebook"></i>&nbsp;&nbsp;&nbsp;&nbsp;Facebook</button>
             <button className="Google-button"><i className="fab fa-google"></i>&nbsp;&nbsp;&nbsp;&nbsp;Google</button>

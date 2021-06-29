@@ -13,10 +13,10 @@ export default class Main extends Component {
     render () {
         return(
             <div className="Main-container">
+                <div className="Main-title">
+                    <h1>Pedí en restaurantes, súper, y mucho más!</h1>
+                </div>
                 <div className="Searcher-container">
-                    <div className="Searcher-title">
-                        <h1>Pedí en restaurantes, súper, y mucho más!</h1>
-                    </div>
                     <div className="Searcher-input">
                         <i className="fas fa-search"></i>
                         <input placeholder="Buscá cualquier producto"></input>
@@ -26,9 +26,51 @@ export default class Main extends Component {
                     </div>
                 </div>
                 <div className="Stores-container">
-                    <h3 className="Stores-subtitle">Conseguí todo lo que necesites.</h3>
-                    <h2 className="Stores-title">Nuestras tiendas disponibles.</h2>
+                    <div className="Stores-titles">
+                        <h3 className="Stores-subtitle">Conseguí todo lo que necesites.</h3>
+                        <h2 className="Stores-title">Nuestras tiendas disponibles.</h2>
+                    </div>
                     <ul className="Stores-available">
+                        <li className="Store-item">
+                            <a href="#!" className="Item-container">
+                                <div className="Item-image">
+                                    <img src="https://images.rappi.com.ar/new_store_type/restaurant-1604926368.png?d=200x200" alt="restaurants"></img>
+                                </div>
+                                <h4 className="Item-title">
+                                    Restaurantes
+                                </h4>
+                            </a>
+                        </li>
+                        <li className="Store-item">
+                            <a href="#!" className="Item-container">
+                                <div className="Item-image">
+                                    <img src="https://images.rappi.com.ar/new_store_type/restaurant-1604926368.png?d=200x200" alt="restaurants"></img>
+                                </div>
+                                <h4 className="Item-title">
+                                    Restaurantes
+                                </h4>
+                            </a>
+                        </li>
+                        <li className="Store-item">
+                            <a href="#!" className="Item-container">
+                                <div className="Item-image">
+                                    <img src="https://images.rappi.com.ar/new_store_type/restaurant-1604926368.png?d=200x200" alt="restaurants"></img>
+                                </div>
+                                <h4 className="Item-title">
+                                    Restaurantes
+                                </h4>
+                            </a>
+                        </li>
+                        <li className="Store-item">
+                            <a href="#!" className="Item-container">
+                                <div className="Item-image">
+                                    <img src="https://images.rappi.com.ar/new_store_type/restaurant-1604926368.png?d=200x200" alt="restaurants"></img>
+                                </div>
+                                <h4 className="Item-title">
+                                    Restaurantes
+                                </h4>
+                            </a>
+                        </li>
                         <li className="Store-item">
                             <a href="#!" className="Item-container">
                                 <div className="Item-image">

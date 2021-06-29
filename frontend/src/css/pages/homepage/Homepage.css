@@ -2,17 +2,15 @@
     margin: 1em;
 }
 
+.Main-container .Main-title{
+    text-align: center;
+}
+
 .Searcher-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.Searcher-container .Searcher-title {
-    display: flex;
-    text-align: center;
-    
 }
 
 .Searcher-container .Searcher-input {
@@ -56,7 +54,7 @@
 .Stores-container {
     display: flex;
     flex-direction: column;
-    
+    flex-wrap: wrap;
 }
 
 .Stores-container .Stores-subtitle {
@@ -75,9 +73,9 @@
 .Stores-container .Stores-available {
     margin: 0;
     padding: 0;
-    display: grid;
-    grid-template-columns: repeat(2,minmax(1em,1fr));
-    gap: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .Stores-available img {
@@ -87,6 +85,9 @@
 }
 
 .Stores-available .Store-item {
+    margin-left: .5em;
+    margin-right: .5em;
+    max-width: 8em;
     list-style: none;
 }
 
@@ -139,4 +140,115 @@
 
 .Item-text h3 {
     color: #706967;
+}
+
+@media screen and (min-width: 607px) and (max-width: 750px){
+    .Stores-container .Stores-available {
+        justify-content: center;
+    }
+    .Stores-available .Store-item {
+        max-width: 8em;
+    }
+    .Beneficies-container {
+        margin-left: 2em;
+    }
+}
+
+@media screen and (min-width: 751px) and (max-width: 910px){
+    .Searcher-container {
+        flex-direction: row;
+    }
+    .Searcher-container .Searcher-input {
+        padding-left: 5em;
+    }
+    .Searcher-container .Searcher-button {
+        width: 40%;
+        padding-right: 5em;
+    }
+    .Stores-container .Stores-available {
+        justify-content: center;
+    }
+    .Stores-available .Store-item {
+        max-width: 10em;
+    }
+    .Beneficies-container {
+        flex-direction: row;
+    }
+    .Beneficies-item .Item-background {
+        height: 8em;
+    }
+    
+}
+
+@media screen and (min-width: 910px) and (max-width: 1087px){
+    .Searcher-container {
+        flex-direction: row;
+    }
+    .Searcher-container .Searcher-input {
+        width: 20em;
+        padding-left: 10em;
+    }
+    .Searcher-container .Searcher-button {
+        width: 12em;
+        padding-right: 10em;
+    }
+    .Stores-container .Stores-available {
+        justify-content: center;
+    }
+    .Stores-available .Store-item {
+        max-width: 10em;
+    }
+    .Beneficies-container {
+        flex-direction: row;
+    }
+    .Beneficies-item .Item-background {
+        height: 8em;
+    }
+}
+
+@media screen and (min-width: 1088px) {
+    .Main-container {
+        margin-top: 8em;
+    }
+    .Main-container .Main-title h1{
+        font-size: 2.5em;
+    }
+    .Searcher-container {
+        flex-direction: row;
+    }
+    .Searcher-container .Searcher-input {
+        width: 20em;
+        padding-left: 10em;
+    }
+    .Searcher-container .Searcher-button {
+        width: 12em;
+        padding-right: 10em;
+    }
+    .Stores-container {
+        align-content: center;
+    }
+    .Stores-container .Stores-titles {
+        margin-left: 2em;
+    }
+    .Stores-container .Stores-titles h3 {
+        font-size: 1em;
+    }
+    .Stores-container .Stores-titles h2 {
+        font-size: 2em;
+    }
+    .Stores-container .Stores-available {
+        justify-content: center;
+    }
+    .Stores-available .Store-item {
+        max-width: 10em;
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+    .Beneficies-container {
+        flex-direction: row;
+        justify-content: center;
+    }
+    .Beneficies-item .Item-background {
+        height: 8em;
+    }
 }

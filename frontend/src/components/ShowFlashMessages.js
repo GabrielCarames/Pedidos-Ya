@@ -6,10 +6,13 @@ const ShowFlashMessages = props => {
   const [visible, setVisible] = useState(true);
   const [FlashMessage, setFlashMessage] = useState();
 
-  useEffect(async () => {
-    const response = await axios.get('http://localhost:3000/localFlashMessages/')
-    setFlashMessage(response.data)
-  })
+  useEffect(() => {
+    async function axiosData() { // la funcion esta no seq ue iondda, me la pedia react para no generar warnings amarillos
+     const response = await axios.get('http://localhost:3000/localFlashMessages/')
+      setFlashMessage(response.data)
+    }
+    axiosData()
+  },[])
 
   useEffect(() => {
     setTimeout(() => {

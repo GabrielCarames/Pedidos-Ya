@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const useFormHelper = (formType) => {
     const [form, setForm] = useState();
-    const [type, setType] = useState(formType)
+    const [type] = useState(formType)
 
     const handleChange = (e) => {
         setForm({
@@ -23,7 +23,7 @@ const useFormHelper = (formType) => {
                 if(type === "register") {
                     e.preventDefault();
                     await axios.post('http://localhost:3000/users/register', form).then( (res) => {
-                        localStorage.setItem('userlogged', res.config.data)
+                        localStorage.setItem('userLogged', res.config.data)
                         window.location.href = "http://localhost:3001/"
                     });
                 }
