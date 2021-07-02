@@ -1,9 +1,12 @@
 .Main-container {
-    margin: 1em;
+    padding-top: 8em;
+    background-color: #fafaf8;
 }
 
 .Main-container .Main-title{
+    margin: .5em;
     text-align: center;
+    font-size: 1.3em;
 }
 
 .Searcher-container {
@@ -14,7 +17,7 @@
 }
 
 .Searcher-container .Searcher-input {
-    width: 100%;
+    width: 97%;
     height: 2.8em;
     background-color: #fff;
     display: flex;
@@ -23,7 +26,7 @@
 }
 
 .Searcher-input i {
-    margin-top: 1em;
+    margin-top: 1.3em;
 }
 
 .Searcher-input input {
@@ -43,8 +46,9 @@
 }   
 
 .Searcher-button button{
+    margin-left: .5em;
     background-color: #cccccc;
-    width: 100%;
+    width: 97%;
     height: 3em;
     font-size: 18px;
     border-radius: 10px;
@@ -55,6 +59,11 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    margin-top: 11em;
+}
+
+.Stores-container .Stores-titles {
+    margin-left: 1em;
 }
 
 .Stores-container .Stores-subtitle {
@@ -100,6 +109,7 @@
 }
 
 .Beneficies-container {
+    margin-left: 1em;
     margin-top: 3em;
     display: flex;
     flex-direction: column;
@@ -132,6 +142,7 @@
     flex-direction: column;
     justify-content: space-between;
     font-size: 13px;
+    max-width: 280px;
 }
 
 .Item-text * {
@@ -208,7 +219,7 @@
 
 @media screen and (min-width: 1088px) {
     .Main-container {
-        margin-top: 8em;
+        padding-top: 8em;
     }
     .Main-container .Main-title h1{
         font-size: 2.5em;
@@ -217,10 +228,13 @@
         flex-direction: row;
     }
     .Searcher-container .Searcher-input {
-        width: 20em;
-        padding-left: 10em;
+        margin-top: 5em;
+        width: 30em;
+        height: 3.4em;
+        margin-left: 10em;
     }
     .Searcher-container .Searcher-button {
+        margin-top: 6em;
         width: 12em;
         padding-right: 10em;
     }

@@ -5,6 +5,7 @@ const Header = () => {
     console.log("este esos", userLogged)
     return(
         <div className="Header-container">
+            
             <div className="Header-logo">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Rappi_logo.svg/1200px-Rappi_logo.svg.png" alt="logo"></img>
             </div>
@@ -12,7 +13,7 @@ const Header = () => {
             <div className="Header-login-options">
                 <div className="Login-options-login">
                     <button className="Button-login">
-                    <Link className="Buttons-login" to="/login"><h3>Ingresar</h3></Link>
+                        <Link className="Buttons-login" to="/login"><h3>Ingresar</h3></Link>
                     </button>
                 </div>
                 <div className="Login-options-register">

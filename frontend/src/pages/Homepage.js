@@ -2,13 +2,6 @@ import React, { Component } from 'react';
 import '../css/pages/homepage/Homepage.css'
 
 export default class Main extends Component {
-
-    /*constructor(props) {
-        super(props)
-        this.state = {
-            
-        }
-    }*/
     
     render () {
         return(

@@ -22,6 +22,10 @@
     width: 12.5em;
 }
 
+.Header-login-options a {
+    text-decoration: none;
+}
+
 .Header-login-options *{
     height: 1.8em;
     font-size: 14px;
@@ -39,7 +43,7 @@
 
 .Header-login-options .Login-options-register button {
     width: 8em;
-    background-color: #b2cebf;
+    background-color: #0CC665;
     border: none;
     border-radius: 8px;
 }
