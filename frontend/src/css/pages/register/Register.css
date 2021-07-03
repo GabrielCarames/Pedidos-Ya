@@ -1,7 +1,7 @@
 .Register-container {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
+    display: grid;
+    grid-template-columns: auto;
+    gap: 2em;
     text-align: center;
     background-color: #e9e9e9;
 }
@@ -20,15 +20,13 @@
 
 .Register-outside .SocialMedia-buttons {
     margin-top: 1em;
-    display: grid;
-    grid-template-rows: 3;
-    gap: 1em;
+    display: flex;
+    flex-direction: column;
 }
 
 .SocialMedia-buttons button {
-    margin-left: -2em;
+    margin-top: 1em;
     height: 3em;
-    width: 120%;
     color: white;
     font-size: 1em;
     font-family: 'Poppins', sans-serif;
@@ -54,44 +52,25 @@
     flex-direction: column;
 }
 
-.Register-inside .Register-form {
-    display: flex;
-    flex-direction: column;
-}
-
-.Register-inside .Input-names {
-    display: flex;
-    width: 103%;
+.Register-form {
+    display: grid;
+    gap: 1em;
 }
 
 .Register-form input {
-    width: 98.5%;   
     outline: none;
     border:none;
     background-color: rgb(255, 255, 255);
     border-radius: 15px;
     height: 2.5em;
-    padding-left: 1em;
+    width: 100%;
+    padding-left: .5em;
 }
 
-.Register-form input::placeholder {
-    color: black;
-}
-
-.Input-names .Name {
-    margin-right: 1em;
-}
-
-.Register-form .Input-password {
-    margin-top: 1em;
-}
-
-.Register-form .Input-email {
-    margin-top: 1em;
-}
-
-.Register-form .Input-number {
-    margin-top: 1em;
+.Register-form .Input-names {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 1em;
 }
 
 .Register-form .Register-button {
@@ -100,4 +79,27 @@
     background-color: #0cc665;
     color:white;
     border-radius: 20px;
+}
+
+@media screen and (min-width: 910px) and (max-width: 1400px){
+    .Register-container {
+        grid-template-columns: auto auto;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width: 1401px){
+    .Register-container {
+        grid-template-columns: auto auto;
+        align-items: center;
+        justify-content: center;
+        gap: 18em;
+    }
+    .Register-container .Register-outside {
+        width: 30em;
+    }
+
+    .Register-container .Register-inside {
+        width: 30em;
+    }
 }
