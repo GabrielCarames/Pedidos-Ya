@@ -2,6 +2,7 @@
 import useFormHelper from '../hooks/useFormHelper';
 import '../css/pages/register/Login.css'
 import { useState } from 'react';
+import { Link } from "react-router-dom";
 
 const Login = () => { 
     const [formType] = useState("login");
@@ -9,6 +10,9 @@ const Login = () => {
 
     return (
       <div className="Login-container">
+        <div className="Homepage-back">
+          <button><i class="fas fa-chevron-left"></i><Link to="/">Volver</Link></button>
+        </div>
         <div className="Login-options">
           <h1>Iniciar sesión</h1>
           <h3>¿Aún no te has registrado?<br /> <a href="/#">Registrate aquí</a></h3>

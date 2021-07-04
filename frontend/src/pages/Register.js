@@ -2,6 +2,7 @@
 import useFormHelper from '../hooks/useFormHelper';
 import '../css/pages/register/Register.css'
 import { useState } from 'react';
+import { Link } from "react-router-dom";
 
 const Register = () => {
     const [formType] = useState("register");
@@ -9,9 +10,11 @@ const Register = () => {
 
     return (
       <div className="Register-container">
+        <div className="Homepage-back">
+          <button><i class="fas fa-chevron-left"></i><Link to="/">Volver</Link></button>
+        </div>
         <div className="Register-outside">
           <h1>Registrate</h1>
-         
           <h3>¿Ya tienes una cuenta? <a href="/#">Inicia sesión aquí</a></h3>
           <div className="SocialMedia-buttons">
             <button className="Facebook-button"><i className="fab fa-facebook"></i>&nbsp;&nbsp;&nbsp;&nbsp;Facebook</button>
