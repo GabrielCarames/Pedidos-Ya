@@ -11,7 +11,7 @@ const Register = () => {
     return (
       <div className="Register-container">
         <div className="Homepage-back">
-          <button><i class="fas fa-chevron-left"></i><Link to="/">Volver</Link></button>
+          <button><i className="fas fa-chevron-left"></i><Link to="/">Volver</Link></button>
         </div>
         <div className="Register-outside">
           <h1>Registrate</h1>

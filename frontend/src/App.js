@@ -1,6 +1,5 @@
 import './css/Header.css';
 import './css/App.css';
-import ShowFlashMessages from './components/ShowFlashMessages';
 import Header from './components/App/Header';
 import Footer from './components/App/Footer';
 import {
@@ -18,7 +17,6 @@ function App() {
   return (
     <Router>
       <Header />
-      <ShowFlashMessages delay="3000" />
         <Switch>
             <Route exact path="/" component={Homepage} />
             <Route exact path="/register" component={Register} />

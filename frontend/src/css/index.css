@@ -6,4 +6,5 @@ body {
 #root {
   display: grid;
   grid-template-rows: 4em auto 10.7em;
+  /*grid-template-rows: 2em 4em auto 10.7em;*/
 }

@@ -9,5 +9,9 @@ router.get('/', function (req, res) {
   res.send(localFlashMessage)
 })
 
+router.put('/removeflashmessage', function (req, res) {
+  localStorage.removeItem('successMessage');
+})
+
 module.exports = router
 
