@@ -24,8 +24,9 @@
 }
 
 .Login-options .SocialMedia-buttons {
-    display: grid;
-    gap: 1em;
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
 }
 
 .Login-options .SocialMedia-buttons button {
@@ -36,12 +37,31 @@
     border-radius: 20px;
 }
 
-.login-form .Input-celnumber {
+.Login-form .Input-celnumber {
     margin-top: 1em;
 }
 
 .Input-celnumber input {
     outline: none;
     border: none;
-    
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    height: 3em;
+    width: 100%;
+    padding-left: .5em;
+}
+
+.Login-form .Login-button {
+    width: 100%;
+    margin-top: 1em;
+    height: 3em;
+    background-color: #0cc665;
+    color:white;
+    border-radius: 20px;
+}
+
+@media screen and (min-width: 910px){
+    .Login-container .Login-options {
+        width: 50em;
+    }
 }

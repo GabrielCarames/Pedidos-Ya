@@ -2,6 +2,7 @@ import './css/Header.css';
 import './css/App.css';
 import ShowFlashMessages from './components/ShowFlashMessages';
 import Header from './components/App/Header';
+import Footer from './components/App/Footer';
 import {
   BrowserRouter as Router,
   Route,
@@ -24,6 +25,7 @@ function App() {
             <Route exact path="/login" component={Login} />
             <Route path="*" component={Error404} />
         </Switch>
+      <Footer />
     </Router>
   );
 }
