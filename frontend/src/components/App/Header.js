@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
     const userLogged = localStorage.getItem('userLogged')
-    console.log("este esos", userLogged)
 
     return(
         <div className="Header-container">

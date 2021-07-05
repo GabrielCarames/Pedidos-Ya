@@ -38,13 +38,14 @@ passport.use('local-register', new LocalStrategy({
 
 passport.use('local-signin', new LocalStrategy({
   usernameField: 'celnumber',
-  passwordField: 'celnumber',
-  passReqToCallback: true
-}, async (req, names, celnumber, done) => {
+  passwordField: 'celnumber'
+}, async (req, celnumber, done) => {
   const user = await userController.findByCelNumber(celnumber);
   if(!user) {
-    return done(null, false, localStorage.setItem('failureMessage', 'El número ingresado no existe.'));
+    localStorage.setItem('failureMessage', 'El número ingresado no existe.')
+    return done(null, false);
+  } else {
+    localStorage.setItem('successMessage', 'Te has logueado satisfactoriamente.')
+    return done(null, user);
   }
-  localStorage.setItem('successMessage', 'Te has logueado satisfactoriamente.')
-  return done(null, user);
 }));
