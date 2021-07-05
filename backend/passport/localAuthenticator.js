@@ -27,8 +27,7 @@ passport.use('local-register', new LocalStrategy({
 }, async (req, email, password, done) => {
   const user = await userController.findByEmail(email)
   if(user) {//null es que no le das ningun error, false es que no le das ningun user
-    return done(null, false, localStorage.setItem('failureMessage', 'El email ingresado ya se encuentra registrado.')
-      );
+    return done(null, false, localStorage.setItem('failureMessage', 'El email ingresado ya se encuentra registrado.'));
   } else {
     const newUser = await userController.createUser(req.body)
     localStorage.setItem('successMessage', 'Te has registrado satisfactoriamente.');

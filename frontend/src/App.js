@@ -10,6 +10,7 @@ import {
 import Homepage from './pages/Homepage';
 import Register from './pages/Register';
 import Login from './pages/Login';
+import Search from './pages/Search';
 import Error404 from './pages/Error404';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route exact path="/" component={Homepage} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/search" component={Search} />
             <Route path="*" component={Error404} />
         </Switch>
       <Footer />
