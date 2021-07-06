@@ -28,6 +28,9 @@ app.use(passport.session())
 //routes
 app.use('/users', require('./routes/users'))
 app.use('/localFlashMessages', require('./routes/localFlashMessages'))
+app.use('/search', require('./routes/search'))
+app.use('/mierda', require('./routes/mierda'))
+
 
 app.use(function (req, res, next) {
     res.header('Content-Type', 'application/json');

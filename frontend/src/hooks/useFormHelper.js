@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { useHistory } from "react-router-dom";
 
 const useFormHelper = (formType) => {
     const [form, setForm] = useState();
     const [type] = useState(formType)
+    const { push } = useHistory();
 
     const handleChange = (e) => {
         setForm({
@@ -15,7 +17,8 @@ const useFormHelper = (formType) => {
     const handleSubmit = async function (e) {
         e.preventDefault();
         try {
-            if(isNaN(form.celnumber)){
+            if(form.celnumber && isNaN(form.celnumber)){
+                console.log("eh??", form)
                 throw new Error("No puedes ingresar caracteres en tu número celular.")
             }
             try {
@@ -32,7 +35,7 @@ const useFormHelper = (formType) => {
                     }
                     
                 }
-                if(type === "login") {
+                if(type === "login") { //HACER FUNCIONES DE LOS POSTS ASI NO REPETIR TANTO CODIGO
                     e.preventDefault();
                     try {
                         await axios.post('http://localhost:3000/users/login', form).then( (res)=> {
@@ -46,7 +49,25 @@ const useFormHelper = (formType) => {
                     }
                     
                 }
-                
+                else {
+                    e.preventDefault();
+                    try {
+                        await axios.post('http://localhost:3000/search/handleSearch', form).then( (res)=> {
+                            console.log(res.data)
+                            const searchData = res.data
+                            push({
+                                pathname: '/search',
+                                state: {
+                                    data: searchData
+                                }
+                            })
+                            //window.location.href = "http://localhost:3001/search" + res.data
+                        });
+                    } catch (error) {
+                        
+                        console.log("Hubo un error con la busqueda: ", error)
+                    }
+                }
             } catch (error) {
                 e.preventDefault();
                 console.log("Hubo un error con el servidor: ", error)

@@ -1,21 +1,22 @@
 import '../css/pages/Homepage.css'
 import { Link } from "react-router-dom";
-
+import useFormHelper from '../hooks/useFormHelper';
 const Main = () => {
+    const [handleChange, handleSubmit] = useFormHelper()
     return(
         <div className="Main-container">
             <div className="Main-title">
                 <h1>Pedí en restaurantes, súper, y mucho más!</h1>
             </div>
-            <div className="Searcher-container">
+            <form className="Searcher-container" onSubmit={handleSubmit}>
                 <div className="Searcher-input">
                     <i className="fas fa-search"></i>
-                    <input placeholder="Buscá cualquier producto"></input>
+                    <input placeholder="Buscá cualquier producto" type="text" name="search" onChange={handleChange}></input>
                 </div>
                 <div className="Searcher-button">
-                    <button><Link to="/search">Buscar</Link></button>
+                    <button type="submit">Buscar</button>
                 </div>
-            </div>
+            </form>
             <div className="Stores-container">
                 <div className="Stores-titles">
                     <h3 className="Stores-subtitle">Conseguí todo lo que necesites.</h3>
