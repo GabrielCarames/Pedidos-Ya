@@ -51,6 +51,14 @@
     
 }
 
+.Results-stores h1 {
+    font-weight: 100;
+}
+
+.Results-stores b {
+    font-weight: 1000;
+}
+
 .Results-stores .Stores-carrousel {
     display: flex;
     
@@ -62,9 +70,15 @@
     text-align: center;
 }
 
+.Carrousel-item p {
+    margin: 0;
+    text-transform: capitalize;
+}
+
 .Stores-carrousel img {
     width: 4em;
     height: auto;
+    border-radius: 5em;
 }
 
 .Search-results .Results-storesProducts {
@@ -75,21 +89,55 @@
 
 .Results-storesProducts .StoresProducts-store {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+}
+
+.StoresProducts-store p {
+    margin-left: .5em;
+    text-transform: capitalize;
+    font-weight: 1000;
 }
 
 .StoresProducts-store img {
-    width: 2em;
+    width: 3em;
     height: auto;
+    border-radius: 5em;
 }
 
 .Results-storesProducts .StoresProducts-products {
     margin-top: 1em;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .StoresProducts-products img {
     width: 9em;
     height: auto;
 } 
+
+.StoresProducts-products .Products-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.Products-item > * {
+    text-transform: capitalize;
+    font-weight: 1000;
+}
+
+.Products-item .Item-price {
+    margin: 0;
+}
+
+.Products-item .Item-name {
+    margin-top: .5em;
+}
+
+.Products-item button {
+    border-radius: .5em;
+    background-color: #0cc665;
+    color: white;
+    height: 2em;
+}

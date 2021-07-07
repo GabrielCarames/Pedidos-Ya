@@ -53,12 +53,12 @@ const useFormHelper = (formType) => {
                     e.preventDefault();
                     try {
                         await axios.post('http://localhost:3000/search/handleSearch', form).then( (res)=> {
-                            console.log(res.data)
+                            console.log(form)
                             const searchData = res.data
                             push({
                                 pathname: '/search',
                                 state: {
-                                    data: searchData
+                                    data: searchData, form
                                 }
                             })
                             //window.location.href = "http://localhost:3001/search" + res.data

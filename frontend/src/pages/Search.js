@@ -1,8 +1,9 @@
 import "../css/pages/Search.css";
 
 const Search = (props) => {
-  console.log("soymama ", props.location.state.data.stores[0])
-
+  const stores = props.location.state.data.stores
+  const search = props.location.state.form.search
+  console.log("soymama ", stores)
   return (
     <div className="Search-container">
       <div className="Search-filters">
@@ -29,20 +30,12 @@ const Search = (props) => {
       </div>
       <div className="Search-results">
         <div className="Results-stores">
-          <h1>Resultados de tachancka en:</h1>
-       
-          {Object.keys(props.location.state.data.stores).map((item) => <li>{props.location.state.data.stores[item].name}</li> )}
-          fua lo hice xDASp, lo del coto es porque buscate coto xasd
+          <h1>Resultados de <b>"{search}"</b> en:</h1>
+          {/*Object.keys(props.location.state.data.stores).map((item) => <li>{props.location.state.data.stores[item].name}</li>)*/}
           <div className="Stores-carrousel">
             <div className="Carrousel-item">
-              <img
-                _ngcontent-ng-rappi-c20=""
-                src="https://images.rappi.com.ar/marketplace/coto-1599858972.png?d=70x70"
-                alt="Coto"
-                title="Coto"
-                class="  ng-lazyloaded"
-              />
-              Coto
+              {Object.keys(stores).map((item) => <img src= {stores[item].logo} alt="Coto" title="Coto" />)} 
+              {Object.keys(stores).map((item) => <p>{stores[item].name}</p> )}
             </div>
             <div className="Carrousel-item" style={{ marginLeft: "1em" }}>
               <img
@@ -65,17 +58,18 @@ const Search = (props) => {
               title="Coto"
               class="  ng-lazyloaded"
             />
-            COTO
+            <p>coto</p>
           </div>
           <div className="StoresProducts-products">
-            <img
-              _ngcontent-ng-rappi-c20=""
-              src="https://images.rappi.com.ar/products/816537-1574447618628.png?d=136x136"
-              alt="Coto Prepizza de Tomate Mediana "
-              title="Coto Prepizza de Tomate Mediana "
-              class="  ng-lazyloaded"
-            />
-            $30000
+            {Object.keys(stores[0].products).map((product) => 
+                
+                <div className="Products-item">
+                  {<img src= {stores[0].products[product].logo} alt="Coto" title="Coto" />}
+                  {<p className="Item-price"> {stores[0].products[product].price}  </p>}
+                  {<p className="Item-name"> {stores[0].products[product].name}  </p>}
+                  <button>Agregar</button>
+                </div>
+            )}
           </div>
         </div>
       </div>
