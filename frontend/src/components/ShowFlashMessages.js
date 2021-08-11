@@ -8,7 +8,7 @@ const ShowFlashMessages = props => {
 
   useEffect(() => {
     async function axiosData() { // la funcion esta no seq ue iondda, me la pedia react para no generar warnings amarillos
-     const response = await axios.get('http://localhost:3000/localFlashMessages/')
+     const response = await axios.get('/localFlashMessages/')
      if(response.data) {
       document.getElementById("root").style.gridTemplateRows = "2em 4em auto 10.7em";
       setFlashMessage(response.data)
@@ -21,7 +21,7 @@ const ShowFlashMessages = props => {
     setTimeout(async () => {
       setVisible(false);
       document.getElementById("root").style.gridTemplateRows = "4em auto 10.7em";
-      await axios.put('http://localhost:3000/localFlashMessages/removeflashmessage')
+      await axios.put('/localFlashMessages/removeflashmessage')
     }, props.delay);
   }, [props.delay]);
 

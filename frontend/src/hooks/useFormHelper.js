@@ -25,12 +25,12 @@ const useFormHelper = (formType) => {
                 if(type === "register") {
                     e.preventDefault();
                     try {
-                        await axios.post('http://localhost:3000/users/register', form).then( (res) => {
+                        await axios.post('/users/register', form).then( (res) => {
                             localStorage.setItem('userLogged', res.config.data)
-                            window.location.href = "http://localhost:3001/"
+                            window.location.href = "/"
                         });
                     } catch (error) {
-                        window.location.href = "http://localhost:3001/register"
+                        window.location.href = "/register"
                         console.log("Hubo un error con el registro: ", error)
                     }
                     
@@ -38,13 +38,13 @@ const useFormHelper = (formType) => {
                 if(type === "login") { //HACER FUNCIONES DE LOS POSTS ASI NO REPETIR TANTO CODIGO
                     e.preventDefault();
                     try {
-                        await axios.post('http://localhost:3000/users/login', form).then( (res)=> {
+                        await axios.post('/users/login', form).then( (res)=> {
                             //por que no hay un if del data.auth?, porque en caso de que ingreses mal la contra, passportno se por que pero reconoce de alguna manera que esta mal y tira un error 401. por tanto no puedo ahcer otra cosa mas que usar el catch de abajo
                             localStorage.setItem('userLogged', res.config.data)
-                            window.location.href = "http://localhost:3001/"
+                            window.location.href = "/"
                         });
                     } catch (error) {
-                        window.location.href = "http://localhost:3001/login"
+                        window.location.href = "/login"
                         console.log("Hubo un error con el ingreso: ", error)
                     }
                     
@@ -52,7 +52,7 @@ const useFormHelper = (formType) => {
                 else {
                     e.preventDefault();
                     try {
-                        await axios.post('http://localhost:3000/search/handleSearch', form).then( (res)=> {
+                        await axios.post('/search/handleSearch', form).then( (res)=> {
                             console.log(form)
                             const searchData = res.data
                             push({
