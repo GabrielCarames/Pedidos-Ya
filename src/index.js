@@ -17,6 +17,5 @@ async function main() {
 main();
 
 if(process.env.NODE_ENV === 'production') {
-    console.log("sotpyyeye")
     app.use(express.static('frontend/build'))
 }
